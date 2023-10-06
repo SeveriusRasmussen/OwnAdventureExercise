@@ -1,6 +1,17 @@
 import java.util.Scanner;
 
 public class Adventure {
+    private final Map map; //tager information fra Map til map i public.
+    private final Player player;
+
+    public Adventure() {
+        map = new Map();
+        player = new Player();
+        start();
+    }
+
+    // Lav public
+
 
     /*    Map gameMap = new Map();
         gameMap.buildMap();
@@ -58,7 +69,7 @@ public class Adventure {
                 /*default:
                     System.out.println("You... you... ASSHOLE. Input something useful now!");
                     break; */
-           }
+}
 
            // metode for the player moving into a room or against the wall.
         /*   if (newRoom != null) {

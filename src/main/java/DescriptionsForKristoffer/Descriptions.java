@@ -70,7 +70,7 @@ public class Descriptions {
                                     """);
                                     //Can get food from the Jetsons to heal if the player asks the Jetsons about they're having fun.
 
-    Room room30 = new Room("A Item.Weapon Museum", """
+    Room room30 = new Room("A Weapon Museum", """
                                     There are many weapons on the walls, all of them are from some games and movies you know.
                                     Ratchet and Clank are discussing what weapon to use.
                                     The girls, Eleven and Ellie, are watching around as if they're looking for trouble. What are they up to?

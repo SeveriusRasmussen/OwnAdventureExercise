@@ -1,5 +1,4 @@
-// import Item.Item;
-
+import java.util.ArrayList;
 /* Se FamilyTreeExercise i GitHub
     Room klassen har det samme princip som Person klassen på GitHub.
     'Room' er Person, 'neighbour----' er enten mother eller father.
@@ -16,16 +15,16 @@ public class Room {
     private Room neighbourSouth;
     private Room neighbourEast;
     private Room neighbourWest;
-   // private ArrayList<Item> roomItems;
+    private ArrayList<Item> roomItems;
 
     // constructor for Room
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
-        //roomItems = new ArrayList<>();
+        roomItems = new ArrayList<>();
     }
 
-    /* // Adds item to Room
+    // Adds item to Room
     public void addItemToRoom(Item item){
         roomItems.add(item);
     }
@@ -36,7 +35,7 @@ public class Room {
 
     public void removeItemFromRoom (Item item){
         roomItems.remove(item);
-    } */
+    }
 
     // Getters og Setters.
     public String getName() {

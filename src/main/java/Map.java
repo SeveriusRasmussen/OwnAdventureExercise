@@ -1,16 +1,4 @@
 public class Map {
-    /*
-    formål med map:
-    Lave forbindelse mellem rummene.
-
-    */
-    /* Kortet over Map.
-     ___________
-    |_1_|_2_|_3_|
-    |_4_|_5_|_6_|
-    |_7_|_8_|_9_|
-     */
-
     private Room current;
 
     public void buildMap() {
@@ -19,14 +7,25 @@ public class Map {
         current = room1;
 
         //The other rooms
-        Room room2 = new Room("a bridge","A river is running under the bridge, the sun shines giving the river a sparking ");
-        Room room3 = new Room("a treehouse","");
-        Room room4 = new Room("a tower","");
-        Room room5 = new Room("a secret hall","");
-        Room room6 = new Room("a bar","");
-        Room room7 = new Room("a castle","");
-        Room room8 = new Room("a stone path","");
-        Room room9 = new Room("a shrine","");
+        Room room2 = new Room("a bridge", """
+                                    A river is running under the bridge, the sun shines giving the river a sparking
+                                    """);
+        Room room3 = new Room("a treehouse", """
+                                    a treehouse by the beautiful cherry tree.
+                                    a water spring is running nearby 
+                                    """);
+        Room room4 = new Room("a tower", """
+                                    """);
+        Room room5 = new Room("a secret hall", """
+                                    """);
+        Room room6 = new Room("a bar", """
+                                    """);
+        Room room7 = new Room("a castle", """
+                                    """);
+        Room room8 = new Room("a stone path", """
+                                    """);
+        Room room9 = new Room("a shrine", """
+                                    """);
 
         //Room connections:
         //West neighbours

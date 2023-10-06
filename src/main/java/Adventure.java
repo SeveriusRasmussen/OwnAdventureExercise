@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Adventure {
-    public static void main(String[] args) {
-        Map gameMap = new Map();
+
+    /*    Map gameMap = new Map();
         gameMap.buildMap();
 
         Scanner scanner = new Scanner(System.in);
@@ -57,11 +57,11 @@ public class Adventure {
                     break;
                 /*default:
                     System.out.println("You... you... ASSHOLE. Input something useful now!");
-                    break;*/
+                    break; */
            }
 
            // metode for the player moving into a room or against the wall.
-           if (newRoom != null) {
+        /*   if (newRoom != null) {
                 gameMap.setCurrent(newRoom);
                 System.out.println("You are now in " + gameMap.getCurrentRoom());
            } else {
@@ -69,7 +69,7 @@ public class Adventure {
            }
         }
 
-        scanner.close();
+        //scanner.close();
 
-    }
-}
+    }*/
+

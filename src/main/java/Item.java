@@ -32,6 +32,4 @@ abstract class Item {
     public String toString() {
         return NAME;
     }
-
-
 }

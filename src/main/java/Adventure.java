@@ -33,6 +33,7 @@ public class Adventure {
             case "N", "n", "north":
                 Room newRoomNorth = gameMap.getCurrent().getNeighbourNorth();
                 movePlayer(newRoomNorth);
+                //movePlayer("north");
                 break;
             case "S", "s", "south":
                 Room newRoomSouth = gameMap.getCurrent().getNeighbourSouth();
@@ -69,6 +70,16 @@ public class Adventure {
 
     }
 
+    // movePlayer(String direction) henter information fra klassen Player.
+    private void movePlayer(String direction) {
+        player.move(direction);
+       /* if (newRoom != null) {
+            gameMap.setCurrent(newRoom);
+            System.out.println("You are now in " + gameMap.getCurrentRoom());
+        } else {
+            System.out.println("You ran into the wall, how stupid are you really?");
+        }*/
+    }
     private void movePlayer(Room newRoom) {
         if (newRoom != null) {
             gameMap.setCurrent(newRoom);

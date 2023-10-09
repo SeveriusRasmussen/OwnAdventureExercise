@@ -15,7 +15,7 @@ public class Map {
     private Room current;
 
     public Map() {
-        current = room1;
+       current = room1;
     }
     public void addItemToRoom(Item item, Room room) {
         room.addItemToRoomInventory(item);

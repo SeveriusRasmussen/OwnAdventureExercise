@@ -1,18 +1,31 @@
+
+
+import java.util.ArrayList;
+
 public class Adventure {
     private final Map gameMap;
+    private Player player;
+    private Room currentRoom;
 
     public Adventure() {
         gameMap = new Map();
         gameMap.buildMap();
+        player = new Player();
+        currentRoom = gameMap.getCurrent();
+    }
+
+    public Room getCurrentRoom() {
+        return currentRoom;
     }
 
     public String getCurrentRoomName() {
-        return gameMap.getCurrentName();
+        return currentRoom.getName(); // Use the current room's name
     }
 
     public String getCurrentRoomDescription() {
-        return gameMap.getCurrentDescription();
+        return currentRoom.getDescription(); // Use the current room's description
     }
+
 
     public void processInput(String input) {
         // Handle user input and game logic here
@@ -24,14 +37,17 @@ public class Adventure {
             case "S", "s", "south":
                 Room newRoomSouth = gameMap.getCurrent().getNeighbourSouth();
                 movePlayer(newRoomSouth);
+                //movePlayer("south");
                 break;
             case "E", "e", "east":
                 Room newRoomEast = gameMap.getCurrent().getNeighbourEast();
                 movePlayer(newRoomEast);
+                //movePlayer("east");
                 break;
             case "W", "w", "west":
                 Room newRoomWest = gameMap.getCurrent().getNeighbourWest();
                 movePlayer(newRoomWest);
+                //movePlayer("west");
                 break;
             // Quit metode
             case "Q", "q", "quit":
@@ -43,7 +59,7 @@ public class Adventure {
                 break;
             // Look metode
             case "L", "l", "look":
-                lookAround();
+                UserInterface.lookAroundRoom(gameMap.getCurrent()); //Call the lookAroundRoom method
                 break;
             default:
                 // Handle invalid input
@@ -78,6 +94,36 @@ public class Adventure {
 
     private void lookAround() {
         System.out.println(gameMap.getCurrentDescription());
+    }
+
+    public void takeItem(String itemName) {
+        // Check if the current room has the specified item
+        ArrayList<Item> roomInventory = currentRoom.getRoomInventory();
+        for (Item item : roomInventory) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                // Add the item to the player's inventory and remove it from the room
+                player.addItemToInventory(item);
+                currentRoom.removeItemFromRoomInventory(item);
+                System.out.println("You took the " + item.getName() + ".");
+                return;
+            }
+        }
+        System.out.println("Item not found in the room.");
+    }
+
+    public void dropItem(String itemName) {
+        // Check if the player has the specified item
+        ArrayList<Item> inventory = player.getInventory();
+        for (Item item : inventory) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                // Remove the item from the player's inventory and add it to the room
+                player.removeItemFromInventory(item);
+                currentRoom.addItemToRoomInventory(item);
+                System.out.println("You dropped the " + item.getName() + " in the room.");
+                return;
+            }
+        }
+        System.out.println("Item not found in your inventory.");
     }
 }
 /*

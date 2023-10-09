@@ -17,6 +17,9 @@ public class Map {
     public Map() {
         current = room1;
     }
+    public void addItemToRoom(Item item, Room room) {
+        room.addItemToRoomInventory(item);
+    }
 
     public void buildMap() {
         // The first floor of the house.
@@ -179,6 +182,15 @@ public class Map {
         room16.setNeighbours(null, room18,room15,null);
         room17.setNeighbours(room14, null,null,null);
         room18.setNeighbours(room16, null, null, null);
+
+        // Create items
+        Item goldenKey = new Item("Golden Key", "A shiny golden key that looks important.");
+        Item healthPotion = new Item("Health Potion", "A potion that can restore your health.");
+
+        // Add the items above to rooms
+        addItemToRoom(goldenKey,room1);
+        addItemToRoom(healthPotion, room2);
+
     }
 
     /*    //Room connections:

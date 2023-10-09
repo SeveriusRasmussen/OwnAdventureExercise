@@ -15,26 +15,13 @@ public class Room {
     private Room neighbourSouth;
     private Room neighbourEast;
     private Room neighbourWest;
-    private ArrayList<Item> roomItems;
+    private ArrayList<Item> roomInventory;
 
     // constructor for Room
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
-        roomItems = new ArrayList<>();
-    }
-
-    // Adds item to Room
-    public void addItemToRoom(Item item){
-        roomItems.add(item);
-    }
-
-    public ArrayList<Item> getRoomItems() {
-        return roomItems;
-    }
-
-    public void removeItemFromRoom (Item item){
-        roomItems.remove(item);
+        roomInventory = new ArrayList<>();
     }
 
     // Getters og Setters.
@@ -90,5 +77,18 @@ public class Room {
     @Override
     public String toString() {
         return name;
+    }
+
+    // Adds item to Room
+    public void addItemToRoomInventory(Item item) {
+        roomInventory.add(item);
+    }
+
+    public void removeItemFromRoomInventory(Item item) {
+        roomInventory.remove(item);
+    }
+
+    public ArrayList<Item> getRoomInventory() {
+        return roomInventory;
     }
 }

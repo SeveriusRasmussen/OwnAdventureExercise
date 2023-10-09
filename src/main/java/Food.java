@@ -1,4 +1,4 @@
-// Arv klassen til Item klassen.
+/*// Arv klassen til Item klassen.
 
 class Food extends Item {
     public Food(String name, String description) {
@@ -9,4 +9,4 @@ class Food extends Item {
     public void hpRestored() {
         System.out.println(getItemName() + " 50+ HP");
     }
-}
+}*/

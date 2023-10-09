@@ -10,7 +10,7 @@ abstract class Item {
         this.description = description;
     }
 
-    /* Abstrakt metoder for klassen HealthPotions.
+    /* Abstrakt metoder for klassen Food.
     Abstrakt metoder for melee og ranged weapon ligger i weapon klassen. */
     public abstract void hpRestored();
 

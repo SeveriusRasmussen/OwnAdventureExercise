@@ -1,7 +1,7 @@
 // Arv klassen til Item klassen.
 
-class HealthPotions extends Item {
-    public HealthPotions(String name, String description) {
+class Food extends Item {
+    public Food(String name, String description) {
         super(name, description);
     }
 

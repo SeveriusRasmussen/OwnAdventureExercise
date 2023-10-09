@@ -176,7 +176,7 @@ public class Map {
         room13.setNeighbours(room10, room7,room12,room14);
         room14.setNeighbours(null, room17,room13,null);
         room15.setNeighbours(room12, null,null,room16);
-        room16.setNeighbours(null, room18,null,room17);
+        room16.setNeighbours(null, room18,room15,null);
         room17.setNeighbours(room14, null,null,null);
         room18.setNeighbours(room16, null, null, null);
     }

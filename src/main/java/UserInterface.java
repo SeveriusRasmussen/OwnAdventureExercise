@@ -65,6 +65,7 @@ public class UserInterface {
     }
 
     // Allow the player to look into his inventory.
+    //TODO make the player able to look into inventory.
     public void viewInventory(Player player) {
         ArrayList<Item> inventory = player.getInventory();
         System.out.println("Inventory:");

@@ -1,5 +1,3 @@
-
-
 import java.util.ArrayList;
 
 public class Adventure {
@@ -30,44 +28,55 @@ public class Adventure {
     public void processInput(String input) {
         // Handle user input and game logic here
         switch (input.toLowerCase()) {
+
             case "N", "n", "north":
                 Room newRoomNorth = gameMap.getCurrent().getNeighbourNorth();
                 movePlayer(newRoomNorth);
                 //movePlayer("north");
                 break;
+
             case "S", "s", "south":
                 Room newRoomSouth = gameMap.getCurrent().getNeighbourSouth();
                 movePlayer(newRoomSouth);
                 //movePlayer("south");
                 break;
+
             case "E", "e", "east":
                 Room newRoomEast = gameMap.getCurrent().getNeighbourEast();
                 movePlayer(newRoomEast);
                 //movePlayer("east");
                 break;
+
             case "W", "w", "west":
                 Room newRoomWest = gameMap.getCurrent().getNeighbourWest();
                 movePlayer(newRoomWest);
                 //movePlayer("west");
                 break;
+
+            //TODO make take and drop metodes here
+            //case "take"
+            //case "drop" etc.
+
             // Quit metode
             case "Q", "q", "quit":
                 quitGame();
                 break;
+
             // help metode
             case "H", "h", "help":
                 displayHelp();
                 break;
+
             // Look metode
             case "L", "l", "look":
                 UserInterface.lookAroundRoom(gameMap.getCurrent()); //Call the lookAroundRoom method
                 break;
+
+            // Handle invalid input
             default:
-                // Handle invalid input
                 System.out.println("Invalid input. Please enter a valid command.");
                 break;
         }
-
     }
 
     // movePlayer(String direction) henter information fra klassen Player.
@@ -97,8 +106,10 @@ public class Adventure {
     private void displayHelp() {
         System.out.println("""
                 Write one of these commands to take action:
-                N or North to move north, S or South to move south,
-                W or West to move west, E or East to move east.
+                Movements:
+                N or North to move north, S or South to move south, W or West to move west, E or East to move east.
+                not available: T or Take to take item from the room you're in
+                not available: D or Drop to drop item from your inventory into the room you're in.
                 L or Look to observe the room you're in.
                 Q or Quit to exit the game.""");
     }

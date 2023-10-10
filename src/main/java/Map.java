@@ -1,6 +1,6 @@
 import AdditionStuffs.Colors;
 //TODO do some colorful texts here in every room!
-// Like red color for some gruesome thing or yellow for something bright.
+//Like red color for some gruesome thing or yellow for something bright.
 public class Map {
     /*
     formål med map:

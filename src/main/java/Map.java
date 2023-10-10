@@ -22,7 +22,7 @@ public class Map {
     }
 
     public void buildMap() {
-        // The first floor of the house.
+        /*--The first floor of the house.--*/
         room1 = new Room("The Entrance", """
                 The room is spooky and creepy to be in.
                 The portraits on the wall are unfriendly to look at, that is as if they're staring daggers at you
@@ -87,7 +87,7 @@ public class Map {
                 """);
         // Item: Vials, one healing potion, one resurrection potion (For the dad ghost) and one poison potion.
 
-        // The second floor of the house
+        /*--The second floor of the house--*/
         room9 = new Room("The Parent's Bedroom", """
                 A lifeless body lies on the bed, its appearance withered and gaunt.
                 Meanwhile, its ethereal soul stands by the window, weeping silently.
@@ -184,13 +184,20 @@ public class Map {
         room18.setNeighbours(room16, null, null, null);
 
         // Create items
-        Item goldenKey = new Item("Golden Key", "A shiny golden key that looks important.");
-        Item healthPotion = new Item("Health Potion", "A potion that can restore your health.");
+        Item theNote = new Item("The Note", "A note with a sketchy of the house as a map, the note says: You have to escape the house by using three.... the rest is burned and hard to read.");
+        Item theCup = new Item("Healthy Tea", "Tea made from the finest herbs. The aroma is just like in a Buddhist temple, peaceful and delightful aroma.");
+        Item theCleaver = new Item("A Butcher Cleaver", "The biggest mad butcher cleaver, a colossal testament to the art of butchery.");
+
+        Item theDevilStatue = new Item("A Grinning Devil Statue", "The devil is grinning while pointing upward with its one hand and the other hand is grabbing its throat.");
+        Item ritualPaper = new Item("A Ritual Paper", "The paper describes a metode to do a ritual to open the portal for the void.");
 
         // Add the items above to rooms
-        addItemToRoom(goldenKey,room1);
-        addItemToRoom(healthPotion, room2);
+        addItemToRoom(theNote,room1);
+        addItemToRoom(theCup, room2);
+        addItemToRoom(theCleaver, room3);
 
+        addItemToRoom(theDevilStatue, room12);
+        addItemToRoom(ritualPaper, room12);
     }
 
     /*    //Room connections:
@@ -258,3 +265,8 @@ public class Map {
     }
 
 }
+
+
+// jeg har problemer med push disse til gitHub. Jeg kan push men i github er forældet altid. Hvorfor?
+// Hvad mener du med forældret? Jeg går lige på toilettet, kan du åbne jeres github i browseren også
+

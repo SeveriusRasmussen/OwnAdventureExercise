@@ -244,13 +244,13 @@ public class Map {
         indtil den 9. rum.
          */
 
-    public String getCurrentName() {
+    /*public String getCurrentName() {
         return current.getName();
     }
 
     public String getCurrentDescription() {
         return current.getDescription();
-    }
+    }*/
 
     public String getCurrentRoom() {
         return current.getName();
@@ -263,10 +263,5 @@ public class Map {
     public Room getCurrent() {
         return current;
     }
-
 }
-
-
-// jeg har problemer med push disse til gitHub. Jeg kan push men i github er forældet altid. Hvorfor?
-// Hvad mener du med forældret? Jeg går lige på toilettet, kan du åbne jeres github i browseren også
 

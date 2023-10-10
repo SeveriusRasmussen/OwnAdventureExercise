@@ -1,3 +1,4 @@
+import AdditionStuffs.Colors;
 /*// Arv klassen til Item klassen.
 
 class Food extends Item {

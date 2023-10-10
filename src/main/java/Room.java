@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import AdditionStuffs.Colors;
 /* Se FamilyTreeExercise i GitHub
     Room klassen har det samme princip som Person klassen på GitHub.
     'Room' er Person, 'neighbour----' er enten mother eller father.

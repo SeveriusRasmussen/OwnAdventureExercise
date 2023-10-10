@@ -1,6 +1,7 @@
 import AdditionStuffs.Colors;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -42,8 +43,16 @@ public class UserInterface {
     }
 
     public void processInput(String input) {
+        input = input.toLowerCase();
+
+        // Split the input into individual words
+        String[] words = input.split("\\s+");
+
+        // Check the first word to determine the action
+        String action = words[0];
+
         // Handle user input and game logic here
-        switch (input.toLowerCase()) {
+        switch (action) {
 
             // Direction metode
             case "n", "north":
@@ -72,14 +81,21 @@ public class UserInterface {
 
             // Take item metode
             case "t", "take":
-                System.out.println("Type the name of the item you wish to take:");
+                if (words.length > 1) {
+                    String itemName = String.join(" ", Arrays.copyOfRange(words, 1, words.length));
+                    takeItem(itemName);
+                } else {
+                    System.out.println("Please specify the item you want to take.");
+                }
+                break;
+               /* System.out.println(Colors.PURPLE + "Type the name of the item you wish to take:" + Colors.RESET);
                 String itemToTake = scanner.nextLine();
                 takeItem(itemToTake);
-                break;
+                break;*/
 
             // Drop item metode
             case "d", "drop":
-                System.out.println("Type the name of the item you wish to drop from your inventory.");
+                System.out.println(Colors.PURPLE + "Type the name of the item you wish to drop from your inventory." + Colors.RESET);
                 String itemToDrop = scanner.nextLine();
                 dropItem(itemToDrop);
                 break;
@@ -91,7 +107,7 @@ public class UserInterface {
 
             // Investigate item metode
             case "examine":
-                System.out.println("Enter the name of the item you want to examine:");
+                System.out.println(Colors.PURPLE + "Enter the name of the item you want to examine:" + Colors.RESET);
                 String itemToExamine = scanner.nextLine();
                 examineItem(itemToExamine);
                 break;
@@ -138,8 +154,8 @@ public class UserInterface {
                 For the movements:
                 N or north: move north, S or south: move south, W or west: move west, E or east: move east.
                 For the other commands:
-                T or take: to take item from the room you're in.
-                D or drop: to drop the item from your inventory into the room you're in.
+                T or take: type take and enter then type the item to take.
+                D or drop: type drop and enter then type the item to drop.
                 Inv or bag: look into the inventory of your bag.
                 Examine: take a closer look at the item you chosen from the bag.
                 L or Look: to observe the room you're in.
@@ -158,7 +174,7 @@ public class UserInterface {
                 // Add the item to the player's inventory and remove it from the room
                 player.addItemToInventory(item);
                 currentRoom.removeItemFromRoomInventory(item);
-                System.out.println("You took the " + item.getName() + ".");
+                System.out.println(Colors.CYAN + "You took the " + item.getName() + "." + Colors.RESET);
                 return;
             }
         }

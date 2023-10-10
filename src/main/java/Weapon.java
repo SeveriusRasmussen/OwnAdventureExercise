@@ -1,4 +1,4 @@
-
+import AdditionStuffs.Colors;
 //Abstrakt klasse for både RangedWeapon og MeleeWeapon
 public abstract class Weapon extends Item{
     private int weaponDamage;

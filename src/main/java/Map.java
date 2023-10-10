@@ -1,3 +1,6 @@
+import AdditionStuffs.Colors;
+//TODO do some colorful texts here in every room!
+// Like red color for some gruesome thing or yellow for something bright.
 public class Map {
     /*
     formål med map:
@@ -23,12 +26,12 @@ public class Map {
 
     public void buildMap() {
         /*--The first floor of the house.--*/
-        room1 = new Room("The Entrance", """
+        room1 = new Room("The Entrance", Colors.BLUE + """
                 The room is spooky and creepy to be in.
                 The portraits on the wall are unfriendly to look at, that is as if they're staring daggers at you
                 making you feel yourself uncomfortable and uneasy.
                 There is a round table in the center of the room with a note on it.
-                """);
+                """ + Colors.RESET);
         // Item: Note with Map and explanation to how to win (Map). A bat (Weapon)
         room2 = new Room("The Living Room", """
                 The room is dark and old with many spider webs.

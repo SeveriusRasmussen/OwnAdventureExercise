@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import AdditionStuffs.Colors;
 
 public class Adventure {
 
@@ -11,45 +12,16 @@ public class Adventure {
     }
 
     public static void lookAroundRoom(Room room) {
-        System.out.println("Room Description:");
+        System.out.println("\033[0;35mRoom Description:\033[0m");
         System.out.println(room.getDescription());
 
         ArrayList<Item> roomInventory = room.getRoomInventory();
-        System.out.println("Items in the room:");
+        System.out.println("\033[0;35mItems in the room:\033[0m");
         for (Item item : roomInventory) {
-            System.out.println("- " + item.getName());
+            System.out.println("\033[0;36m" + item.getName() + "\033[0m");
         }
     }
 
-    // Take and drop items.
-    /*public void takeItem(Room room, Player player, String itemName) {
-        ArrayList<Item> roomInventory = room.getRoomInventory();
-        for (Item item : roomInventory) {
-            if (item.getName().equalsIgnoreCase(itemName)) {
-                player.addItemToInventory(item);
-                room.removeItemFromRoomInventory(item);
-                System.out.println("You took the " + item.getName() + ".");
-                return;
-            }
-        }
-        System.out.println("Item not found in the room.");
-    }*/
-
-    /*public void dropItem(Room room, Player player, String itemName) {
-        ArrayList<Item> inventory = player.getInventory();
-        for (Item item : inventory) {
-            if (item.getName().equalsIgnoreCase(itemName)) {
-                player.removeItemFromInventory(item);
-                room.addItemToRoomInventory(item);
-                System.out.println("You dropped the " + item.getName() + " in the room.");
-                return;
-            }
-        }
-        System.out.println("Item not found in your inventory.");
-    }*/
-
-    // Allow the player to look into his inventory.
-    //TODO make the player able to look into inventory.
    /* public void viewInventory(Player player) {
         ArrayList<Item> inventory = player.getInventory();
         System.out.println("Inventory:");

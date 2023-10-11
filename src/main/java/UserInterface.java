@@ -28,7 +28,7 @@ public class UserInterface {
 
     public void startGame() {
         System.out.println("""
-                \033[0;33mWelcome to the house of the void
+                \033[0;33mWelcome to House of the Void
                 You are here to find the dimension cube to get away from the void.
                 You are standing in front of the frontdoor of the house.
                 A voice from the void is telling you \033[0;34m''...ype... help.... to... figu... thin... ut...''\033[0;33m

@@ -107,6 +107,7 @@ public class UserInterface {
 
             // Investigate item metode
             case "examine":
+                viewInventory();
                 System.out.println(Colors.PURPLE + "Enter the name of the item you want to examine:" + Colors.RESET);
                 String itemToExamine = scanner.nextLine();
                 examineItem(itemToExamine);
@@ -157,7 +158,7 @@ public class UserInterface {
                 T or take: type take and enter then type the item to take.
                 D or drop: type drop and enter then type the item to drop.
                 Inv or bag: look into the inventory of your bag.
-                Examine: take a closer look at the item you chosen from the bag.
+                Examine: take a look into your inventory and then choose the item to examine.
                 L or Look: to observe the room you're in.
                 Q or Quit to exit the game.""");
     }

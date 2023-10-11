@@ -1,4 +1,5 @@
 import AdditionStuffs.Colors;
+import item.Item;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -175,7 +176,7 @@ public class UserInterface {
                 return;
             }
         }
-        System.out.println("Item not found in the room.");
+        System.out.println("item.Item not found in the room.");
     }
 
     public void dropItem(String itemName) {
@@ -190,7 +191,7 @@ public class UserInterface {
                 return;
             }
         }
-        System.out.println("Item not found in your inventory.");
+        System.out.println("item.Item not found in your inventory.");
     }
 
     public void viewInventory() {
@@ -216,7 +217,7 @@ public class UserInterface {
                 return;
             }
         }
-        System.out.println("Item not found in your inventory.");
+        System.out.println("item.Item not found in your inventory.");
     }
 }
 

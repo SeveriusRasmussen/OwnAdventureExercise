@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-import AdditionStuffs.Colors;
+
+import item.Item;
 /* Se FamilyTreeExercise i GitHub
     Room klassen har det samme princip som Person klassen på GitHub.
     'Room' er Person, 'neighbour----' er enten mother eller father.
@@ -88,17 +89,17 @@ public class Room {
         return roomInventory;
     }
 
-    /*private List<Item> items = new ArrayList<>();
+    /*private List<item.Item> items = new ArrayList<>();
 
-    public voic addItem(Item item) {
+    public voic addItem(item.Item item) {
         items.add(item);
     }
 
-    public void removeItem(Item item) {
+    public void removeItem(item.Item item) {
         items.remove(item);
     }
 
-    public List<Item> getItems() {
+    public List<item.Item> getItems() {
         return items;
     }*/
 }

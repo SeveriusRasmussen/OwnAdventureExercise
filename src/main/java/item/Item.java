@@ -1,3 +1,5 @@
+package item;
+
 import AdditionStuffs.Colors;
 public class Item {
     private String name;

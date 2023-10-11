@@ -1,4 +1,5 @@
 import AdditionStuffs.Colors;
+import item.Item;
 
 public class Map {
 
@@ -21,14 +22,14 @@ public class Map {
                 making you feel yourself uncomfortable and uneasy.
                 There is a round table in the center of the room, a note and a map are on the table with a bat leaning onto it.
                 """ + Colors.RESET);
-                // Item: Note with Map and explanation to how to win (Map). A bat (Weapon)
+                // item.Item: Note with Map and explanation to how to win (Map). A bat (Weapon)
         room2 = new Room("The Living Room", """
                 The room is dark and old with many spider webs.
                 There is a fresh tea cup on the coffee table in the center of the room.
                 There are evil looking statues by the south wall.
                 They're grinning as if they're making fun of you and are daring you to go near them.
                 """);
-                // Item: Healthy tea. (Food)
+                // item.Item: Healthy tea. (Food)
                 // Enemy: Statue x 2.
         room3 = new Room("The Kitchen", """
                 The kitchen reeked of old rotting food and old unfinished dishes.
@@ -36,7 +37,7 @@ public class Map {
                 One of the chair by the table inexplicably begins to balance on its two legs,
                 seemingly on its own.
                 """);
-                // Item: A Big Cleaver (Weapon). Rotting apple (Poison food).
+                // item.Item: A Big Cleaver (Weapon). Rotting apple (Poison food).
         room4 = new Room("The Art Room", """
                 The room is full with unfinished artworks but many of them are inspiring to look at.
                 There are portraits in here as well unfriendly nad all.
@@ -58,7 +59,7 @@ public class Map {
                 and unsetting symphony, one that defies explanation and sends a chill down your spine.
                 A violin is not playing and lays on the small table beside the piano.
                 """);
-                // Item: A violin for calming the crooked boy then the player could take the severed head from him.
+                // item.Item: A violin for calming the crooked boy then the player could take the severed head from him.
         room7 = new Room("The Library", """
                 The room is a absolute marvel, with towering bookshelves that reach all the way to the ceiling,
                 filled with a extensive collection of books.
@@ -73,14 +74,14 @@ public class Map {
                 and one can't help but feel the books themselves are watching.
                 That is as if they're waiting for someone brave or foolish enough to delve into their dark and enigmatic pages.
                 """);
-        // Item: Demonology book, item 1 of 3 use for escape the house of void.
+        // item.Item: Demonology book, item 1 of 3 use for escape the house of void.
 
         room8 = new Room("The Botanical Laboratory", """
                 A lush sanctuary with plants from around the world.
                 In the center, a research table holds vials and specimens, surrounded by some carnivorous plants.
                 The air hums with earthly scents and vitality, where science meets natur's beauty, yet concealed dangers lurk.
                 """);
-        // Item: Vials, one healing potion, one resurrection potion (For the dad ghost) and one poison potion.
+        // item.Item: Vials, one healing potion, one resurrection potion (For the dad ghost) and one poison potion.
 
         /*--The second floor of the house--*/
         room9 = new Room("The Parent's Bedroom", """
@@ -89,7 +90,7 @@ public class Map {
                 The room is shrouded in an eerie stillness, where the boundary between life and death blurs,
                 and a sorrowful presence lingers.
                 """);
-        // Item: key for Office if gave the resurrection potion to the dad.
+        // item.Item: key for Office if gave the resurrection potion to the dad.
 
         room10 = new Room("The Possessed Girl's Bedroom", """
                 A chilling aura permeates the space, as if it's sinister scene from a nightmare.
@@ -108,7 +109,7 @@ public class Map {
                 It's a scene where innocence takes a dark and macabre turn.
                 """);
         // Enemy: The crooked boy.
-        // Item: The severed head is used as a key to open the painting of the mother without head in the guest room.
+        // item.Item: The severed head is used as a key to open the painting of the mother without head in the guest room.
 
         room12 = new Room("The Office", """
                 An oppressive silence fills the room as ancient, decaying books line the shelves.
@@ -116,7 +117,7 @@ public class Map {
                 A Heavy leather chair sits ominously behind a grand, dust-covered desk.
                 It's as if the past holds a malevolent presence here, watching and waiting in the stillness.
                 """);
-        // Item: The grinning Demon statue, Ritual paper. 2/3 and 3/3 of the items for complete the game while standing in the void room.
+        // item.Item: The grinning Demon statue, Ritual paper. 2/3 and 3/3 of the items for complete the game while standing in the void room.
 
         room13 = new Room("The Stairwell", """
                 Dimly lit, the narrow staircase ascends steadily, its steps worn from years of use.
@@ -125,7 +126,7 @@ public class Map {
                 It's a place where the ascent feels like a descent into the unknown.
                 A chainsaw is hanging on the wall.
                 """);
-        // Item: Chainsaw (Use for killing the possessed children.)
+        // item.Item: Chainsaw (Use for killing the possessed children.)
 
         room14 = new Room("The Observatory", """
                 The night sky stretches out before you, but an unnatural darkness shrouds the stars.

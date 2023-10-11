@@ -1,7 +1,7 @@
 /*import AdditionStuffs.Colors;
-// Arv klassen til Item klassen.
+// Arv klassen til item.Item klassen.
 
-class Food extends Item {
+class Food extends item.Item {
     public Food(String name, String description) {
         super(name, description);
     }

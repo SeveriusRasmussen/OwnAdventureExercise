@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-import AdditionStuffs.Colors;
+
+import item.Item;
 
 public class Player {
     private ArrayList<Item> inventory;
@@ -12,10 +13,10 @@ public class Player {
     public boolean addItemToInventory(Item item) {
         if (inventory.size() < maxInventorySlots) {
             inventory.add(item);
-            return true; // Item added successfully
+            return true; // item.Item added successfully
         } else {
             System.out.println("Your inventory is full. You can't carry more items.");
-            return false; // Item not added
+            return false; // item.Item not added
         }
     }
 

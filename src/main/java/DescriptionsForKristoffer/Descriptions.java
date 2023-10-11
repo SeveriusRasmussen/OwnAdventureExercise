@@ -84,7 +84,7 @@ public class Descriptions {
                                     The grandmother looks like someone on 150 years, she could use some wrinkle cream.
                                     There are portraits of family by the Captain. Those are some ugly kids!
                                     A cupboard full of gine glasses and alcohol. The PC on the table is turned on and shows a login screen.""");
-                                    room31.addItemToRoom(new Item("BridgePassword", "Password", "A password for opening the bridge."));
+                                    room31.addItemToRoom(new item.Item("BridgePassword", "Password", "A password for opening the bridge."));
                                     // Password2 for the PC is from the computer at Edward in room22.
 
     Room room32 = new Room("The Bridge Gate", """
@@ -101,7 +101,7 @@ public class Descriptions {
                                     The toilets are locked with a sign that says
                                     'The toilets were destroyed by a mad doctor, Dr. Fluke Hawkins.'""");
                                     // Items: ....
-                                    room33.addItemToRoom(new Item("Toilet Brush","Junk","A toilet brush that was used for some kinky play"));
+                                    room33.addItemToRoom(new item.Item("Toilet Brush","Junk","A toilet brush that was used for some kinky play"));
 
     Room room34 = new Room("The Command Deck", """
                                     There is a gigantic window to the outer space,

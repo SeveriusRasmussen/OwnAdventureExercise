@@ -1,4 +1,4 @@
-package Useless;
+package item;
 /*
 import AdditionStuffs.Colors;
 //Arv til weapon, ubegrænset brug af våben

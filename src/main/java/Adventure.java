@@ -1,6 +1,6 @@
+import item.Item;
+
 import java.util.ArrayList;
-import java.util.Scanner;
-import AdditionStuffs.Colors;
 
 public class Adventure {
 
@@ -23,10 +23,10 @@ public class Adventure {
     }
 
    /* public void viewInventory(Player player) {
-        ArrayList<Item> inventory = player.getInventory();
+        ArrayList<item.Item> inventory = player.getInventory();
         System.out.println("Inventory:");
         int itemCount = 1;
-        for (Item item : inventory) {
+        for (item.Item item : inventory) {
             System.out.println(itemCount + ". " + item.getName() + " - " + item.getDescription());
             itemCount++;
         }
@@ -38,7 +38,7 @@ public class Adventure {
             try {
                 int selectedItem = Integer.parseInt(input);
                 if (selectedItem >= 1 && selectedItem <= inventory.size()) {
-                    Item itemToDrop = inventory.get(selectedItem - 1);
+                    item.Item itemToDrop = inventory.get(selectedItem - 1);
                     player.removeItemFromInventory(itemToDrop);
                     Room currentRoom = null;
                     currentRoom.addItemToRoomInventory(itemToDrop);

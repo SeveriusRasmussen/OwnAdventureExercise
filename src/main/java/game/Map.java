@@ -48,10 +48,12 @@ public class Map {
                 """);
                 // Enemy: Statue x 2
         room5 = new Room("The Dinner Room", """
-                A lavish feast covers the table, enticing anyone who enters.
-                Portraits on the walls seem to watch your each move, their silent gaze unnerving.
-                The room is beautifully adorned with candles and fragrant roses,
-                creating a captivation yet eerie atmosphere.
+                A seemingly lavish feast covers the table, enticing anyone who enters.
+                The aroma is irresistible, but something about it seems off, though you can't quite put your finger on it.
+                Portraits on the walls seem to watch your every move, their silent gaze unnerving.
+                Are they trying to warn you, or is it just your imagination?
+                The room is beautifully adorned with candles and fragrant roses, creating a captivating yet eerie atmosphere.
+                You're drawn to the table, but a nagging feeling tells you that not everything is as it appears.
                 """);
                 // The player dies if touched the food.
                 // Enemy: the many portraits (Impossible to survive.)
@@ -198,19 +200,19 @@ public class Map {
         // Create items
         Item theNote = new Item("Note", "A note wrote with bad handwriting: You have to escape the house by using three.... the rest is burned and hard to read.");
         Item theBat = new Item("Bat", "A bat used for playing baseball, made of tough metal");
-        FoodItem theCup = new FoodItem("Cup", "Tea made from the finest herbs. The aroma is just like in a Buddhist temple, peaceful and delightful aroma.", 10);
+        FoodItem theCup = new FoodItem("Cup", "Tea made from the finest herbs. The aroma is just like in a Buddhist temple, peaceful and delightful aroma.", 10, 0);
         Item theCleaver = new Item("Cleaver", "The biggest mad butcher cleaver, a colossal testament to the art of butchery.");
-        FoodItem theFeast = new FoodItem("Feast", "No need to describe since the player dies", -1000); //Game Over if taken
+        FoodItem theFeast = new FoodItem("Feast", "No need to describe since the player dies", 0, 1000); //Game Over if taken
         Item theViolin = new Item("Violin", "A spooky violin which was used for many years.");
         Item theBook = new Item("Book", "A ancient book about demonology which was used for calling in the demons and wicked beasts from the dark world.");
-        FoodItem theHealVial = new FoodItem("Health Vial", "A healthy potion", 100);
-        FoodItem thePoisonVial = new FoodItem("Poison Vial", "A poisonious potion", -100);
+        FoodItem theHealVial = new FoodItem("Health Vial", "A healthy potion", 100, 0);
+        FoodItem thePoisonVial = new FoodItem("Poison Vial", "A poisonious potion", 0, 100);
         Item theLifeVial = new Item("Life Vial", "A life potion with a note on it: 'can bring someone back from the death");
         Item theKey = new Item("Key", "A rusty key with a scary head");
         Item chainSaw = new Item("Chainsaw", "A old working chainsaw");
         Item severedHead = new Item("Head", "A severed head of the decreased mother");
         Item ouijaBoard = new Item("Board", "A old Ouija board used for communicating with the decreased");
-        FoodItem theSoap = new FoodItem("Soap", "A fresh fragrant soap", -15);
+        FoodItem theSoap = new FoodItem("Soap", "A fresh fragrant soap", 0, 15);
         Item theDevilStatue = new Item("Statue", "A grinning devil statue pointing upward with its one hand and the other hand is grabbing its throat.");
         Item ritualPaper = new Item("A Ritual Paper", "The paper describes a metode to do a ritual to open the portal for the void.");
         // The game.Map item (big code for a item: DO NOT change!)

@@ -7,7 +7,7 @@ import game.Player;
 import game.Room;
 import item.Item;
 import item.FoodItem;
-import game.Adventure;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,10 +53,8 @@ public class UserInterface {
 
     public void processInput(String input) {
         input = input.toLowerCase();
-
         // Split the input into individual words
         String[] words = input.split("\\s+");
-
         // Check the first word to determine the action
         String action = words[0];
 
@@ -67,25 +65,21 @@ public class UserInterface {
             case "n", "north":
                 Room newRoomNorth = currentRoom.getNeighbourNorth();
                 movePlayer(newRoomNorth);
-                //movePlayer("north");
                 break;
 
             case "s", "south":
                 Room newRoomSouth = currentRoom.getNeighbourSouth();
                 movePlayer(newRoomSouth);
-                //movePlayer("south");
                 break;
 
             case "e", "east":
                 Room newRoomEast = currentRoom.getNeighbourEast();
                 movePlayer(newRoomEast);
-                //movePlayer("east");
                 break;
 
             case "w", "west":
                 Room newRoomWest = currentRoom.getNeighbourWest();
                 movePlayer(newRoomWest);
-                //movePlayer("west");
                 break;
 
             // Take item metode
@@ -93,6 +87,15 @@ public class UserInterface {
                 if (words.length > 1) {
                     String itemName = String.join(" ", Arrays.copyOfRange(words, 1, words.length));
                     takeItem(itemName);
+
+                    if (itemName.equalsIgnoreCase("feast")) {
+                        System.out.println("""
+                        You took the feast, but it was cursed!
+                        All of the portraits in the dinner room attacked you and killed you
+                        """);
+                        gameOver();
+                    }
+
                 } else {
                     System.out.println("Please specify the item you want to take.");
                 }
@@ -108,7 +111,7 @@ public class UserInterface {
                 }
                 break;
 
-            // Look into the player inventory metode
+            // Look into the player's inventory metode
             case "inv", "bag", "inventory":
                 viewInventory();
                 break;
@@ -122,14 +125,24 @@ public class UserInterface {
                     System.out.println("Please specify the item you want to examine.");
                 }
                 break;
-            //TODO do eat method here.
+            // Eat item metode
             case "eat":
                 if (words.length > 1) {
-                    String foodName = String.join(" ", Arrays.copyOfRange(words, 1, words.length));
-                    eatFood(foodName);
+                    String itemName = String.join(" ", Arrays.copyOfRange(words, 1, words.length));
+                    eatItem(itemName);
+
+                    // Check if the player's HP has reached 0
+                    if (player.getHealthPoints() <=0) {
+                        gameOver();
+                    }
                 } else {
                     System.out.println("Please specify the food you want to eat.");
                 }
+                break;
+
+            // See health metode
+            case "hp", "life", "lifepoint", "healthpoint":
+                displayHealthPoints();
                 break;
 
             // Quit metode
@@ -155,6 +168,7 @@ public class UserInterface {
     }
 
 
+
     private void movePlayer(Room newRoom) {
         if (newRoom != null) {
             currentRoom = newRoom;
@@ -167,6 +181,10 @@ public class UserInterface {
     private void quitGame() {
         System.out.println("\033[0;31mYou voided your life into the infinite dimension.\033[0m");
         System.exit(0); // Exit the game
+    }
+
+    private void gameOver() {
+        System.out.println("\033[0;31mYour soul drained into the void.\033[0m");
     }
 
     private void displayHelp() {
@@ -219,18 +237,28 @@ public class UserInterface {
         System.out.println("You can't find the item in your inventory.");
     }
 
-    public void eatFood(String foodName) {
+    public void eatItem(String itemName) {
+        // Check if the player's inventory contains the specified food item
         ArrayList<Item> inventory = player.getInventory();
         for (Item item : inventory) {
-            if (item instanceof FoodItem && item.getName().equalsIgnoreCase(foodName)) {
-                FoodItem foodItem = (FoodItem) item;
+            if (item instanceof FoodItem && item.getName().equalsIgnoreCase(itemName)) {
+                FoodItem foodItem = (FoodItem) item; // Cast the item to FoodItem
                 player.consumeFood(foodItem);
-                System.out.println("You consumed " + foodItem.getName() + " and restored " + foodItem.getHealthPoints() + " health points.");
-                inventory.remove(item);
+
+                if (foodItem.getDamage() > 0) {
+                    System.out.println("You consumed poison food and took " + foodItem.getDamage() + " damage!");
+                }
+
+                // Display the player's health points after the poison food.
+                displayHealthPoints();
                 return;
             }
         }
-        System.out.println("FoodItem item not found in your inventory.");
+        System.out.println("Food item not found in your inventory.");
+    }
+
+    private void displayHealthPoints() {
+        System.out.println("Player Health Points: " + player.getHealthPoints());
     }
 
     public void viewInventory() {

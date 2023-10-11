@@ -96,16 +96,15 @@ public class UserInterface {
                     System.out.println("Please specify the item you want to take.");
                 }
                 break;
-               /* System.out.println(Colors.PURPLE + "Type the name of the item you wish to take:" + Colors.RESET);
-                String itemToTake = scanner.nextLine();
-                takeItem(itemToTake);
-                break;*/
 
             // Drop item metode
             case "d", "drop":
-                System.out.println(Colors.PURPLE + "Type the name of the item you wish to drop from your inventory." + Colors.RESET);
-                String itemToDrop = scanner.nextLine();
-                dropItem(itemToDrop);
+                if (words.length > 1) {
+                    String itemName = String.join(" ", Arrays.copyOfRange(words, 1, words.length));
+                    dropItem(itemName);
+                } else {
+                    System.out.println("Please specify the item you want to drop.");
+                }
                 break;
 
             // Look into the player inventory metode
@@ -115,10 +114,12 @@ public class UserInterface {
 
             // Investigate item metode
             case "examine":
-                viewInventory();
-                System.out.println(Colors.PURPLE + "Enter the name of the item you want to examine:" + Colors.RESET);
-                String itemToExamine = scanner.nextLine();
-                examineItem(itemToExamine);
+                if (words.length > 1) {
+                    String itemName = String.join(" ", Arrays.copyOfRange(words, 1, words.length));
+                    examineItem(itemName);
+                } else {
+                    System.out.println("Please specify the item you want to examine.");
+                }
                 break;
 
             // Quit metode
@@ -198,7 +199,7 @@ public class UserInterface {
                 return;
             }
         }
-        System.out.println("item.Item not found in your inventory.");
+        System.out.println("You can't find the item in your inventory.");
     }
 
     public void viewInventory() {

@@ -90,18 +90,4 @@ public class Room {
     public ArrayList<Item> getRoomInventory() {
         return roomInventory;
     }
-
-    /*private List<item.Item> items = new ArrayList<>();
-
-    public voic addItem(item.Item item) {
-        items.add(item);
-    }
-
-    public void removeItem(item.Item item) {
-        items.remove(item);
-    }
-
-    public List<item.Item> getItems() {
-        return items;
-    }*/
 }

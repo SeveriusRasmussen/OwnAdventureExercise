@@ -2,7 +2,7 @@ package game;
 
 import AdditionStuffs.Colors;
 import item.Item;
-
+import item.FoodItem;
 public class Map {
 
     private Room room1, room2, room3, room4, room5, room6, room7, room8, room9,
@@ -31,7 +31,7 @@ public class Map {
                 There are evil looking statues by the south wall.
                 They're grinning as if they're making fun of you and are daring you to go near them.
                 """);
-                // item.Item: Healthy tea. (Food)
+                // item.Item: Healthy tea. (FoodItem)
                 // Enemy: Statue x 2.
         room3 = new Room("The Kitchen", """
                 The kitchen reeked of old rotting food and old unfinished dishes.
@@ -198,19 +198,19 @@ public class Map {
         // Create items
         Item theNote = new Item("Note", "A note wrote with bad handwriting: You have to escape the house by using three.... the rest is burned and hard to read.");
         Item theBat = new Item("Bat", "A bat used for playing baseball, made of tough metal");
-        Item theCup = new Item("Cup", "Tea made from the finest herbs. The aroma is just like in a Buddhist temple, peaceful and delightful aroma.");
+        FoodItem theCup = new FoodItem("Cup", "Tea made from the finest herbs. The aroma is just like in a Buddhist temple, peaceful and delightful aroma.", 10);
         Item theCleaver = new Item("Cleaver", "The biggest mad butcher cleaver, a colossal testament to the art of butchery.");
-        Item theFeast = new Item("Feast", "No need to describe since the player dies"); //Game Over if taken
+        FoodItem theFeast = new FoodItem("Feast", "No need to describe since the player dies", -1000); //Game Over if taken
         Item theViolin = new Item("Violin", "A spooky violin which was used for many years.");
         Item theBook = new Item("Book", "A ancient book about demonology which was used for calling in the demons and wicked beasts from the dark world.");
-        Item theHealVial = new Item("Health Vial", "A healthy potion");
-        Item thePoisonVial = new Item("Poison Vial", "A poisonious potion");
+        FoodItem theHealVial = new FoodItem("Health Vial", "A healthy potion", 100);
+        FoodItem thePoisonVial = new FoodItem("Poison Vial", "A poisonious potion", -100);
         Item theLifeVial = new Item("Life Vial", "A life potion with a note on it: 'can bring someone back from the death");
         Item theKey = new Item("Key", "A rusty key with a scary head");
         Item chainSaw = new Item("Chainsaw", "A old working chainsaw");
         Item severedHead = new Item("Head", "A severed head of the decreased mother");
         Item ouijaBoard = new Item("Board", "A old Ouija board used for communicating with the decreased");
-        Item theSoap = new Item("Soap", "A fresh fragrant soap");
+        FoodItem theSoap = new FoodItem("Soap", "A fresh fragrant soap", -15);
         Item theDevilStatue = new Item("Statue", "A grinning devil statue pointing upward with its one hand and the other hand is grabbing its throat.");
         Item ritualPaper = new Item("A Ritual Paper", "The paper describes a metode to do a ritual to open the portal for the void.");
         // The game.Map item (big code for a item: DO NOT change!)

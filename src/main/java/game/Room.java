@@ -45,7 +45,6 @@ public class Room {
     }
 
     // Above shows other way to write setNeightbours than the /*...*/ of the setters below.
-
     /*public void setNeighbourSouth(game.Room neighbourSouth) {
             this.neighbourSouth = neighbourSouth;
         }
@@ -73,10 +72,10 @@ public class Room {
     }
 
     // Det her løst min NullPointerException problemet med game.Room.getNeighbour
-    @Override
+   /* @Override
     public String toString() {
         return name;
-    }
+    }*/
 
     // Adds item to game.Room
     public void addItemToRoomInventory(Item item) {

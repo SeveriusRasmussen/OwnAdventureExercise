@@ -1,11 +1,13 @@
 package game;
 
 import java.util.ArrayList;
+
+import item.FoodItem;
 import item.Item;
 
 public class Player {
     private ArrayList<Item> inventory;
-    private int maxInventorySlots = 4; // Maximum inventory slots
+    private int maxInventorySlots = 5; // Maximum inventory slots, can change to any max slots the player can have.
 
     public Player() {
         inventory = new ArrayList<>();
@@ -14,10 +16,10 @@ public class Player {
     public boolean addItemToInventory(Item item) {
         if (inventory.size() < maxInventorySlots) {
             inventory.add(item);
-            return true; // item.Item added successfully
+            return true; // Item added successfully
         } else {
             System.out.println("Your inventory is full. You can't carry more items.");
-            return false; // item.Item not added
+            return false; // item not added
         }
     }
 
@@ -31,5 +33,8 @@ public class Player {
 
     public int getMaxInventorySlots() {
         return maxInventorySlots;
+    }
+
+    public void consumeFood(FoodItem foodItem) {
     }
 }

@@ -6,6 +6,7 @@ import game.Map;
 import game.Player;
 import game.Room;
 import item.Item;
+import item.FoodItem;
 import game.Adventure;
 
 import java.util.ArrayList;
@@ -121,6 +122,15 @@ public class UserInterface {
                     System.out.println("Please specify the item you want to examine.");
                 }
                 break;
+            //TODO do eat method here.
+            case "eat":
+                if (words.length > 1) {
+                    String foodName = String.join(" ", Arrays.copyOfRange(words, 1, words.length));
+                    eatFood(foodName);
+                } else {
+                    System.out.println("Please specify the food you want to eat.");
+                }
+                break;
 
             // Quit metode
             case "q", "quit":
@@ -143,6 +153,7 @@ public class UserInterface {
                 break;
         }
     }
+
 
     private void movePlayer(Room newRoom) {
         if (newRoom != null) {
@@ -173,6 +184,12 @@ public class UserInterface {
     }
 
     public void takeItem(String itemName) {
+        // Check if the player's inventory is already full before taking the item.
+        if (player.getInventory().size() >= player.getMaxInventorySlots()) {
+            System.out.println("Your inventory is already full. You can't have the item in your bag.");
+            return;
+        }
+
         // Check if the current room has the specified item
         ArrayList<Item> roomInventory = currentRoom.getRoomInventory();
         for (Item item : roomInventory) {
@@ -200,6 +217,20 @@ public class UserInterface {
             }
         }
         System.out.println("You can't find the item in your inventory.");
+    }
+
+    public void eatFood(String foodName) {
+        ArrayList<Item> inventory = player.getInventory();
+        for (Item item : inventory) {
+            if (item instanceof FoodItem && item.getName().equalsIgnoreCase(foodName)) {
+                FoodItem foodItem = (FoodItem) item;
+                player.consumeFood(foodItem);
+                System.out.println("You consumed " + foodItem.getName() + " and restored " + foodItem.getHealthPoints() + " health points.");
+                inventory.remove(item);
+                return;
+            }
+        }
+        System.out.println("FoodItem item not found in your inventory.");
     }
 
     public void viewInventory() {

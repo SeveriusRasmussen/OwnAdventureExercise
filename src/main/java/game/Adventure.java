@@ -1,4 +1,7 @@
+package game;
+
 import item.Item;
+import UI.UserInterface;
 
 import java.util.ArrayList;
 
@@ -22,7 +25,7 @@ public class Adventure {
         }
     }
 
-   /* public void viewInventory(Player player) {
+   /* public void viewInventory(game.Player player) {
         ArrayList<item.Item> inventory = player.getInventory();
         System.out.println("Inventory:");
         int itemCount = 1;
@@ -40,7 +43,7 @@ public class Adventure {
                 if (selectedItem >= 1 && selectedItem <= inventory.size()) {
                     item.Item itemToDrop = inventory.get(selectedItem - 1);
                     player.removeItemFromInventory(itemToDrop);
-                    Room currentRoom = null;
+                    game.Room currentRoom = null;
                     currentRoom.addItemToRoomInventory(itemToDrop);
                     System.out.println("You dropped " + itemToDrop.getName() + " in the room.");
                 } else {

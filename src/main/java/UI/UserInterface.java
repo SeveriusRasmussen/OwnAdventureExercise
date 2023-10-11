@@ -1,5 +1,12 @@
+package UI;
+
 import AdditionStuffs.Colors;
+import game.Adventure;
+import game.Map;
+import game.Player;
+import game.Room;
 import item.Item;
+import game.Adventure;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,7 +15,7 @@ import java.util.Scanner;
 public class UserInterface {
     private final Map gameMap;
     private final Player player;
-    private final Room currentRoom;
+    private Room currentRoom;
     private final Scanner scanner;
 
     public UserInterface() {
@@ -57,25 +64,25 @@ public class UserInterface {
 
             // Direction metode
             case "n", "north":
-                Room newRoomNorth = gameMap.getCurrent().getNeighbourNorth();
+                Room newRoomNorth = currentRoom.getNeighbourNorth();
                 movePlayer(newRoomNorth);
                 //movePlayer("north");
                 break;
 
             case "s", "south":
-                Room newRoomSouth = gameMap.getCurrent().getNeighbourSouth();
+                Room newRoomSouth = currentRoom.getNeighbourSouth();
                 movePlayer(newRoomSouth);
                 //movePlayer("south");
                 break;
 
             case "e", "east":
-                Room newRoomEast = gameMap.getCurrent().getNeighbourEast();
+                Room newRoomEast = currentRoom.getNeighbourEast();
                 movePlayer(newRoomEast);
                 //movePlayer("east");
                 break;
 
             case "w", "west":
-                Room newRoomWest = gameMap.getCurrent().getNeighbourWest();
+                Room newRoomWest = currentRoom.getNeighbourWest();
                 movePlayer(newRoomWest);
                 //movePlayer("west");
                 break;
@@ -126,7 +133,7 @@ public class UserInterface {
 
             // Look metode
             case "l", "look":
-                Adventure.lookAroundRoom(gameMap.getCurrent()); //Call the lookAroundRoom method
+                Adventure.lookAroundRoom(currentRoom); //Call the lookAroundRoom method
                 break;
 
             // Handle invalid input
@@ -138,8 +145,8 @@ public class UserInterface {
 
     private void movePlayer(Room newRoom) {
         if (newRoom != null) {
-            gameMap.setCurrent(newRoom);
-            System.out.println("You are now in " + gameMap.getCurrentRoom());
+            currentRoom = newRoom;
+            System.out.println("You are now in " + currentRoom.getName());
         } else {
             System.out.println("You ran into the wall, how stupid are you really?");
         }
@@ -176,7 +183,7 @@ public class UserInterface {
                 return;
             }
         }
-        System.out.println("item.Item not found in the room.");
+        System.out.println("Can't find the item in the room. Type the item without 'the'");
     }
 
     public void dropItem(String itemName) {

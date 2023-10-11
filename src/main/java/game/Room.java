@@ -1,9 +1,11 @@
+package game;
+
 import java.util.ArrayList;
 
 import item.Item;
 /* Se FamilyTreeExercise i GitHub
-    Room klassen har det samme princip som Person klassen på GitHub.
-    'Room' er Person, 'neighbour----' er enten mother eller father.
+    game.Room klassen har det samme princip som Person klassen på GitHub.
+    'game.Room' er Person, 'neighbour----' er enten mother eller father.
     'name' er den samme.
     */
 
@@ -19,7 +21,7 @@ public class Room {
     private Room neighbourWest;
     private ArrayList<Item> roomInventory;
 
-    // constructor for Room
+    // constructor for game.Room
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
@@ -44,16 +46,16 @@ public class Room {
 
     // Above shows other way to write setNeightbours than the /*...*/ of the setters below.
 
-    /*public void setNeighbourSouth(Room neighbourSouth) {
+    /*public void setNeighbourSouth(game.Room neighbourSouth) {
             this.neighbourSouth = neighbourSouth;
         }
-    public void setNeighbourNorth(Room neighbourNorth) {
+    public void setNeighbourNorth(game.Room neighbourNorth) {
         this.neighbourNorth = neighbourNorth;
     }
-    public void setNeighbourEast(Room neighbourEast) {
+    public void setNeighbourEast(game.Room neighbourEast) {
         this.neighbourEast = neighbourEast;
     }
-    public void setNeighbourWest(Room neighbourWest) {
+    public void setNeighbourWest(game.Room neighbourWest) {
         this.neighbourWest = neighbourWest;
     }*/
 
@@ -70,13 +72,13 @@ public class Room {
         return neighbourWest;
     }
 
-    // Det her løst min NullPointerException problemet med Room.getNeighbour
+    // Det her løst min NullPointerException problemet med game.Room.getNeighbour
     @Override
     public String toString() {
         return name;
     }
 
-    // Adds item to Room
+    // Adds item to game.Room
     public void addItemToRoomInventory(Item item) {
         roomInventory.add(item);
     }

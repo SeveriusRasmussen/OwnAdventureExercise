@@ -1,5 +1,6 @@
-import java.util.ArrayList;
+package game;
 
+import java.util.ArrayList;
 import item.Item;
 
 public class Player {

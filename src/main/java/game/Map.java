@@ -1,3 +1,5 @@
+package game;
+
 import AdditionStuffs.Colors;
 import item.Item;
 
@@ -22,7 +24,7 @@ public class Map {
                 making you feel yourself uncomfortable and uneasy.
                 There is a round table in the center of the room, a note and a map are on the table with a bat leaning onto it.
                 """ + Colors.RESET);
-                // item.Item: Note with Map and explanation to how to win (Map). A bat (Weapon)
+                // item.Item: Note with game.Map and explanation to how to win (game.Map). A bat (Weapon)
         room2 = new Room("The Living Room", """
                 The room is dark and old with many spider webs.
                 There is a fresh tea cup on the coffee table in the center of the room.
@@ -209,9 +211,9 @@ public class Map {
         Item severedHead = new Item("Head", "A severed head of the decreased mother");
         Item ouijaBoard = new Item("Board", "A old Ouija board used for communicating with the decreased");
         Item theSoap = new Item("Soap", "A fresh fragrant soap");
-        Item theDevilStatue = new Item("A Grinning Devil Statue", "The devil is grinning while pointing upward with its one hand and the other hand is grabbing its throat.");
+        Item theDevilStatue = new Item("Statue", "A grinning devil statue pointing upward with its one hand and the other hand is grabbing its throat.");
         Item ritualPaper = new Item("A Ritual Paper", "The paper describes a metode to do a ritual to open the portal for the void.");
-        // The Map item (big code for a item: DO NOT change!)
+        // The game.Map item (big code for a item: DO NOT change!)
         Item theMap = new Item("Map", """
                 The map shows some plans over the house.
                 
@@ -250,7 +252,7 @@ public class Map {
 
     }
 
-    /*    //Room connections:
+    /*    //game.Room connections:
         //West neighbours
         room2.setNeighbourWest(room1);
         room3.setNeighbourWest(room2);
@@ -280,8 +282,8 @@ public class Map {
 
     /*
     Bare en anden f.eks måde at forbinde de rooms...
-    Lav i Room-klassen:
-    public void setNeighbours(Room roomNorth, Room roomSouth, Room roomWest, Room roomEast){
+    Lav i game.Room-klassen:
+    public void setNeighbours(game.Room roomNorth, game.Room roomSouth, game.Room roomWest, game.Room roomEast){
         neighbourNorth = northRoom;
         neighbourSouth = southRoom;
         neighbourWest = westRoom;

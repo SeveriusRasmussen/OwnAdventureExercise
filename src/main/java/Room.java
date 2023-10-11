@@ -87,4 +87,18 @@ public class Room {
     public ArrayList<Item> getRoomInventory() {
         return roomInventory;
     }
+
+    /*private List<Item> items = new ArrayList<>();
+
+    public voic addItem(Item item) {
+        items.add(item);
+    }
+
+    public void removeItem(Item item) {
+        items.remove(item);
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }*/
 }

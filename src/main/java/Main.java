@@ -2,7 +2,7 @@ import AdditionStuffs.Colors;
 
 public class Main {
     public static void main(String[] args) {
-        UserInterface userInterface = new UserInterface();
-        userInterface.startGame();
+        UserInterface ui = new UserInterface();
+        ui.startGame();
     }
 }

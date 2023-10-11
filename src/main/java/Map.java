@@ -1,17 +1,7 @@
 import AdditionStuffs.Colors;
 
 public class Map {
-    /*
-    formål med map:
-    Lave forbindelse mellem rummene.
 
-    Kortet over Map.
-     ___________         ___________
-    |_1_|_2_|_3_|       |_9_|10_|11_|
-    |_4_|_5_|_6_|       |12_|13_|14_|
-    |_7_|_8_|_9_|       |15_|16_|17_|
-                            |18_|
-     */
     private Room room1, room2, room3, room4, room5, room6, room7, room8, room9,
             room10, room11, room12, room13, room14, room15, room16, room17, room18;
     private Room current;
@@ -31,51 +21,44 @@ public class Map {
                 making you feel yourself uncomfortable and uneasy.
                 There is a round table in the center of the room, a note and a map are on the table with a bat leaning onto it.
                 """ + Colors.RESET);
-        // Item: Note with Map and explanation to how to win (Map). A bat (Weapon)
-
+                // Item: Note with Map and explanation to how to win (Map). A bat (Weapon)
         room2 = new Room("The Living Room", """
                 The room is dark and old with many spider webs.
                 There is a fresh tea cup on the coffee table in the center of the room.
                 There are evil looking statues by the south wall.
                 They're grinning as if they're making fun of you and are daring you to go near them.
                 """);
-        // Item: Healthy tea. (Food)
-        // Enemy: Statue x 2.
-
+                // Item: Healthy tea. (Food)
+                // Enemy: Statue x 2.
         room3 = new Room("The Kitchen", """
                 The kitchen reeked of old rotting food and old unfinished dishes.
                 A table in the center with moving playing cards on it.
                 One of the chair by the table inexplicably begins to balance on its two legs,
                 seemingly on its own.
                 """);
-        // Item: A Big Cleaver (Weapon). Rotting apple (Poison food).
-
+                // Item: A Big Cleaver (Weapon). Rotting apple (Poison food).
         room4 = new Room("The Art Room", """
                 The room is full with unfinished artworks but many of them are inspiring to look at.
                 There are portraits in here as well unfriendly nad all.
                 There is a floating paint pen painting the painting which featuring a Mona Lisa kinda of portrait,
                 but Mona's face looks very creepy with melting skin and evil eyes.
                 """);
-        // Enemy: Statue x 2
-
+                // Enemy: Statue x 2
         room5 = new Room("The Dinner Room", """
                 A lavish feast covers the table, enticing anyone who enters.
                 Portraits on the walls seem to watch your each move, their silent gaze unnerving.
                 The room is beautifully adorned with candles and fragrant roses,
                 creating a captivation yet eerie atmosphere.
                 """);
-        // The player dies if touched the food.
-        // Enemy: the many portraits (Impossible to survive.)
-
-
+                // The player dies if touched the food.
+                // Enemy: the many portraits (Impossible to survive.)
         room6 = new Room("The Music Room", """
                 An eerie atmosphere lingers as the grand piano and cello, both untouched by human hands,
                 emit hauntingly beautiful yet unsetting melodies, filling the room with a inexplicable
                 and unsetting symphony, one that defies explanation and sends a chill down your spine.
                 A violin is not playing and lays on the small table beside the piano.
                 """);
-        // Item: A violin for calming the crooked boy then the player could take the severed head from him.
-
+                // Item: A violin for calming the crooked boy then the player could take the severed head from him.
         room7 = new Room("The Library", """
                 The room is a absolute marvel, with towering bookshelves that reach all the way to the ceiling,
                 filled with a extensive collection of books.
@@ -210,7 +193,7 @@ public class Map {
 
         // Add the items above to rooms
         // Create items
-        Item theNote = new Item("Note", "A note with a sketchy of the house as a map, the note says: You have to escape the house by using three.... the rest is burned and hard to read.");
+        Item theNote = new Item("Note", "A note wrote with bad handwriting: You have to escape the house by using three.... the rest is burned and hard to read.");
         Item theBat = new Item("Bat", "A bat used for playing baseball, made of tough metal");
         Item theCup = new Item("Cup", "Tea made from the finest herbs. The aroma is just like in a Buddhist temple, peaceful and delightful aroma.");
         Item theCleaver = new Item("Cleaver", "The biggest mad butcher cleaver, a colossal testament to the art of butchery.");

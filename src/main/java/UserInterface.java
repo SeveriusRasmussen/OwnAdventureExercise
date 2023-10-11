@@ -163,10 +163,6 @@ public class UserInterface {
                 Q or Quit to exit the game.""");
     }
 
-    /*private void lookAround() {
-        System.out.println(gameMap.getCurrentDescription());
-    }*/
-
     public void takeItem(String itemName) {
         // Check if the current room has the specified item
         ArrayList<Item> roomInventory = currentRoom.getRoomInventory();

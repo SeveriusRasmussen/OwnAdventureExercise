@@ -31,9 +31,9 @@ public class UserInterface {
         return currentRoom.getName(); // Use the current room's name
     }
 
-    public String getCurrentRoomDescription() {
+    /*public String getCurrentRoomDescription() {
         return currentRoom.getDescription(); // Use the current room's description
-    }
+    }*/
 
     public void startGame() {
         System.out.println("""
@@ -126,7 +126,7 @@ public class UserInterface {
                 }
                 break;
             // Eat item metode
-            case "eat":
+            case "eat", "drink", "consume":
                 if (words.length > 1) {
                     String itemName = String.join(" ", Arrays.copyOfRange(words, 1, words.length));
                     eatItem(itemName);
@@ -197,6 +197,7 @@ public class UserInterface {
                 D or drop: type drop and enter then type the item to drop.
                 Inv or bag: look into the inventory of your bag.
                 Examine: take a look into your inventory and then choose the item to examine.
+                Eat or Drink: eat/drink the food of your choice from your inventory.
                 L or Look: to observe the room you're in.
                 Q or Quit to exit the game.""");
     }
@@ -245,8 +246,8 @@ public class UserInterface {
                 FoodItem foodItem = (FoodItem) item; // Cast the item to FoodItem
                 player.consumeFood(foodItem);
 
-                if (foodItem.getDamage() > 0) {
-                    System.out.println("You consumed poison food and took " + foodItem.getDamage() + " damage!");
+                if (foodItem.getPoisonDmg() > 0) {
+                    System.out.println("You consumed poison food and took " + foodItem.getPoisonDmg() + " damage!");
                 }
 
                 // Display the player's health points after the poison food.

@@ -16,7 +16,7 @@ public class FoodItem extends Item {
             return healthRestore;
         }
 
-        public int getDamage() {
+        public int getPoisonDmg() {
             return damage;
         }
 

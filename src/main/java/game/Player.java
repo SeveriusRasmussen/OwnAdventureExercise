@@ -49,7 +49,7 @@ public class Player {
 
     public void consumeFood(FoodItem foodItem) {
         int healthRestore = foodItem.getHealthRestore();
-        int damage = foodItem.getDamage();
+        int damage = foodItem.getPoisonDmg();
 
         healthPoints += healthRestore; // restore health.
         if (damage > 0) {

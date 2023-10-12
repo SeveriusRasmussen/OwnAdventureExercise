@@ -1,13 +1,12 @@
 package UI;
 
 import AdditionStuffs.Colors;
-import game.Adventure;
 import game.Map;
 import game.Player;
 import game.Room;
 import item.Item;
 import item.FoodItem;
-
+import item.Weapon;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,7 +27,7 @@ public class UserInterface {
     }
 
     public String getCurrentRoomName() {
-        return currentRoom.getName(); // Use the current room's name
+        return currentRoom.getRoomName(); // Use the current room's name
     }
 
     /*public String getCurrentRoomDescription() {
@@ -157,8 +156,13 @@ public class UserInterface {
 
             // Look metode
             case "l", "look":
-                Adventure.lookAroundRoom(currentRoom); //Call the lookAroundRoom method
+                lookAroundRoom(currentRoom); //Call the lookAroundRoom method
                 break;
+
+                //TODO
+            // Equip the weapon
+            case "equip", "arm up":
+
 
             // Handle invalid input
             default:
@@ -172,7 +176,7 @@ public class UserInterface {
     private void movePlayer(Room newRoom) {
         if (newRoom != null) {
             currentRoom = newRoom;
-            System.out.println("You are now in " + currentRoom.getName());
+            System.out.println("You are now in " + currentRoom.getRoomName());
         } else {
             System.out.println("You ran into the wall, how stupid are you really?");
         }
@@ -210,7 +214,7 @@ public class UserInterface {
         }
 
         // Check if the current room has the specified item
-        ArrayList<Item> roomInventory = currentRoom.getRoomInventory();
+        ArrayList<Item> roomInventory = currentRoom.getItems();
         for (Item item : roomInventory) {
             if (item.getName().equalsIgnoreCase(itemName)) {
                 // Add the item to the player's inventory and remove it from the room
@@ -230,7 +234,7 @@ public class UserInterface {
             if (item.getName().equalsIgnoreCase(itemName)) {
                 // Remove the item from the player's inventory and add it to the room
                 player.removeItemFromInventory(item);
-                currentRoom.addItemToRoomInventory(item);
+                currentRoom.addItem(item);
                 System.out.println("You dropped the " + item.getName() + " in the room.");
                 return;
             }
@@ -274,6 +278,18 @@ public class UserInterface {
             }
         }
     }
+//TODO
+    public void equipPlayerWithWeapon(Weapon weapon) {
+        boolean equipped = player.equipWeapon(weapon);
+        if (equipped) {
+            System.out.println("You have equipped the weapon.");
+        }
+
+    }
+
+    public void usePlayerEquippedWeapon() {
+        player.useEquippedWeapon();
+    }
 
     public void examineItem(String itemName) {
         // Check if the player has the specified item
@@ -286,6 +302,17 @@ public class UserInterface {
             }
         }
         System.out.println("item.Item not found in your inventory.");
+    }
+
+    public static void lookAroundRoom(Room room) {
+        System.out.println("\033[0;35mRoom Description:\033[0m");
+        System.out.println(room.getDescription());
+
+        ArrayList<Item> roomInventory = room.getItems();
+        System.out.println("\033[0;35mItems in the room:\033[0m");
+        for (Item item : roomInventory) {
+            System.out.println("\033[0;36m" + item.getName() + "\033[0m");
+        }
     }
 }
 

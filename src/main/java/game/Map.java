@@ -3,6 +3,8 @@ package game;
 import AdditionStuffs.Colors;
 import item.Item;
 import item.FoodItem;
+import item.Weapon;
+
 public class Map {
 
     private Room room1, room2, room3, room4, room5, room6, room7, room8, room9,
@@ -12,8 +14,11 @@ public class Map {
     public Map() {
        current = room1;
     }
+
+    //ArrayList<Enemy> enemies = new ArrayList();
+
     public void addItemToRoom(Item item, Room room) {
-        room.addItemToRoomInventory(item);
+        room.addItem(item);
     }
     public void buildMap() {
 
@@ -194,14 +199,23 @@ public class Map {
         room17.setNeighbours(room14, null,null,null);
         room18.setNeighbours(room16, null, null, null);
 
+        // Add enemies to their rooms
+        room2.addEnemy(new Enemy("Statue 1", 10, 5));
+        room2.addEnemy(new Enemy("Statue 2", 10, 5));
+        room2.addEnemy(new Enemy("Statue 3", 10, 5));
+        room2.addEnemy(new Enemy("Statue 4", 10, 5));
+        room3.addEnemy(new Enemy("Ghost Rick", 20, 10));
+        room3.addEnemy(new Enemy("Ghost Max ", 20, 10));
+        room8.addEnemy(new Enemy("Meat-eating Plants", 100, 10));
+        room10.addEnemy(new Enemy("Possessed girl", 50, 20));
+        room13.addEnemy(new Enemy("Imp 1", 10, 5));
+        room13.addEnemy(new Enemy("Imp 2", 10, 5));
+        room13.addEnemy(new Enemy("Imp 3", 10, 5));
+        room17.addEnemy(new Enemy("Blood Soaked Woman", 100, 50));
 
-
-        // Add the items above to rooms
-        // Create items
+        // Items
         Item theNote = new Item("Note", "A note wrote with bad handwriting: You have to escape the house by using three.... the rest is burned and hard to read.");
-        Item theBat = new Item("Bat", "A bat used for playing baseball, made of tough metal");
         FoodItem theCup = new FoodItem("Cup", "Tea made from the finest herbs. The aroma is just like in a Buddhist temple, peaceful and delightful aroma.", 10, 0);
-        Item theCleaver = new Item("Cleaver", "The biggest mad butcher cleaver, a colossal testament to the art of butchery.");
         FoodItem theFeast = new FoodItem("Feast", "No need to describe since the player dies", 0, 1000); //Game Over if taken
         Item theViolin = new Item("Violin", "A spooky violin which was used for many years.");
         Item theBook = new Item("Book", "A ancient book about demonology which was used for calling in the demons and wicked beasts from the dark world.");
@@ -209,12 +223,17 @@ public class Map {
         FoodItem thePoisonVial = new FoodItem("Poison Vial", "A poisonious potion", 0, 100);
         Item theLifeVial = new Item("Life Vial", "A life potion with a note on it: 'can bring someone back from the death");
         Item theKey = new Item("Key", "A rusty key with a scary head");
-        Item chainSaw = new Item("Chainsaw", "A old working chainsaw");
         Item severedHead = new Item("Head", "A severed head of the decreased mother");
         Item ouijaBoard = new Item("Board", "A old Ouija board used for communicating with the decreased");
         FoodItem theSoap = new FoodItem("Soap", "A fresh fragrant soap", 0, 15);
         Item theDevilStatue = new Item("Statue", "A grinning devil statue pointing upward with its one hand and the other hand is grabbing its throat.");
         Item ritualPaper = new Item("A Ritual Paper", "The paper describes a metode to do a ritual to open the portal for the void.");
+
+        // Weapons
+        Weapon theBat = new Weapon("Bat", "A bat used for playing baseball, made of tough metal", 10, 20);
+        Weapon theCleaver = new Weapon("Cleaver", "The biggest mad butcher cleaver, a colossal testament to the art of butchery.", 10, 50);
+        Weapon chainSaw = new Weapon("Chainsaw", "A old working chainsaw", 4, 100);
+
         // The game.Map item (big code for a item: DO NOT change!)
         Item theMap = new Item("Map", """
                 The map shows some plans over the house.
@@ -307,7 +326,7 @@ public class Map {
     }*/
 
     public String getCurrentRoom() {
-        return current.getName();
+        return current.getRoomName();
     }
 
     public void setCurrent(Room room) {

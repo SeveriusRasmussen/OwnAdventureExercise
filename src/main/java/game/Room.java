@@ -11,26 +11,29 @@ import item.Item;
 
 
 public class Room {
-
-    // Attributter til rummets navn, beskrivelse, dets naboværelser (med dør)
-    private String name;
+    // Attributter til rummets navn, beskrivelse, dets naboværelser
+    private String RoomName;
     private String description;
     private Room neighbourNorth;
     private Room neighbourSouth;
     private Room neighbourEast;
     private Room neighbourWest;
-    private ArrayList<Item> roomInventory;
+    private ArrayList<Item> items = new ArrayList<>();
+    private ArrayList<Enemy> enemies = new ArrayList<>();
 
     // constructor for game.Room
     public Room(String name, String description) {
-        this.name = name;
+        this.RoomName = name;
         this.description = description;
-        roomInventory = new ArrayList<>();
+    }
+
+    public void addEnemy(Enemy enemy){
+        enemies.add(enemy);
     }
 
     // Getters og Setters.
-    public String getName() {
-        return name;
+    public String getRoomName() {
+        return RoomName;
     }
 
     public String getDescription() {
@@ -71,22 +74,20 @@ public class Room {
         return neighbourWest;
     }
 
-    // Det her løst min NullPointerException problemet med game.Room.getNeighbour
-   /* @Override
-    public String toString() {
-        return name;
-    }*/
-
     // Adds item to game.Room
-    public void addItemToRoomInventory(Item item) {
-        roomInventory.add(item);
+    public void addItem(Item item) {
+        items.add(item);
     }
 
     public void removeItemFromRoomInventory(Item item) {
-        roomInventory.remove(item);
+        items.remove(item);
     }
 
-    public ArrayList<Item> getRoomInventory() {
-        return roomInventory;
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public ArrayList<Enemy> getEnemies(){
+        return enemies;
     }
 }

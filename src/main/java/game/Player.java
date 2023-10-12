@@ -1,20 +1,45 @@
 package game;
 
 import java.util.ArrayList;
-
 import item.FoodItem;
 import item.Item;
+import item.Weapon;
 
 public class Player {
     private ArrayList<Item> inventory;
     private int maxInventorySlots = 5; // Maximum inventory slots, can change to any max slots the player can have.
     private int healthPoints;
     private int maxHealthPoints;
+    private Weapon equippedWeapon;
+
 
     public Player() {
         inventory = new ArrayList<>();
         healthPoints = 100; // initialize the player's health points.
         maxHealthPoints = 200;
+        equippedWeapon = null; // No weapon equipped initially
+    }
+
+    public boolean equipWeapon(Weapon weapon) {
+        if (equippedWeapon == null) {
+            equippedWeapon = weapon;
+            return true;
+        } else {
+            System.out.println("You already have a weapon equipped.");
+            return false;
+        }
+    }
+
+    public void useEquippedWeapon() {
+        if (equippedWeapon != null) {
+            equippedWeapon.use();
+            if (equippedWeapon.getUsesLeft() == 0) ;
+            {
+                equippedWeapon = null;
+            }
+        } else {
+            System.out.println("You have no weapon equipped.");
+        }
     }
 
     public boolean addItemToInventory(Item item) {
@@ -26,6 +51,16 @@ public class Player {
             return false; // item not added
         }
     }
+
+   /* public void attackEnemy(Enemy enemy) {
+        int damageDealt = // Calculate the damage dealt by the player.
+        enemy.takeDamage(damageDealt);
+    }
+
+    public void defendAgainstEnemy(Enemy enemy) {
+        int damageReceived = // Calculate the damage recieved by the player.
+        healthPoints -= damageReceived;
+    }*/
 
     public void removeItemFromInventory(Item item) {
         inventory.remove(item);

@@ -21,6 +21,8 @@ public class Room {
     private ArrayList<Item> items = new ArrayList<>();
     private ArrayList<Enemy> enemies = new ArrayList<>();
 
+
+
     // constructor for game.Room
     public Room(String name, String description) {
         this.RoomName = name;

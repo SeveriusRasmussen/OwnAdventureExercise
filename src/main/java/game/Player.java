@@ -7,6 +7,8 @@ import item.Weapon;
 
 public class Player {
     private ArrayList<Item> inventory;
+    private Room currentRoom;
+
     private int maxInventorySlots = 5; // Maximum inventory slots, can change to any max slots the player can have.
     private int healthPoints;
     private int maxHealthPoints;

@@ -1,5 +1,5 @@
 package UI;
-
+//Kun adventure Import her!
 import AdditionStuffs.Colors;
 import game.Map;
 import game.Player;
@@ -13,16 +13,16 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class UserInterface {
-    private final Map gameMap;
+    private final Map map;
     private final Player player;
     private Room currentRoom;
     private final Scanner scanner;
 
     public UserInterface() {
-        gameMap = new Map();
-        gameMap.buildMap();
+        map = new Map();
+        map.buildMap();
         player = new Player();
-        currentRoom = gameMap.getCurrent();
+        currentRoom = map.getCurrent();
         scanner = new Scanner(System.in);
     }
 
@@ -48,6 +48,7 @@ public class UserInterface {
             String input = scanner.nextLine().toUpperCase();
             processInput(input);
         }
+
     }
 
     public void processInput(String input) {
@@ -62,8 +63,9 @@ public class UserInterface {
 
             // Direction metode
             case "n", "north":
-                Room newRoomNorth = currentRoom.getNeighbourNorth();
-                movePlayer(newRoomNorth);
+                movePlayer(currentRoom.getNeighbourNorth());
+                //Room newRoomNorth = currentRoom.getNeighbourNorth();
+                //movePlayer(newRoomNorth);
                 break;
 
             case "s", "south":
@@ -89,10 +91,8 @@ public class UserInterface {
 
                     if (itemName.equalsIgnoreCase("feast")) {
                         System.out.println("""
-                        You took the feast, but it was cursed!
-                        All of the portraits in the dinner room attacked you and killed you
+                        You took the feast, the portraits on the walls are smirking for some reasons.
                         """);
-                        gameOver();
                     }
 
                 } else {

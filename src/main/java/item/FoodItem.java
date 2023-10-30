@@ -1,5 +1,5 @@
 package item;
-
+// PERFEKT FOOD KLASSEN. INTET behov for yderligere ændring!
 // Arv klassen til Item klassen. Can also use for poison I think?
 public class FoodItem extends Item {
     private int healthRestore; // Add a field for the nutrition value of the food.

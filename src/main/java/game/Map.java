@@ -5,10 +5,11 @@ import item.Item;
 import item.FoodItem;
 import item.Weapon;
 
+
 public class Map {
 
     private Room room1, room2, room3, room4, room5, room6, room7, room8, room9,
-            room10, room11, room12, room13, room14, room15, room16, room17, room18;
+           room10, room11, room12, room13, room14, room15, room16, room17, room18;
     private Room current;
 
     public Map() {
@@ -316,23 +317,6 @@ public class Map {
         room3.setNeighbours(null, room6, room2, null);
         indtil den 9. rum.
          */
-
-    /*public String getCurrentName() {
-        return current.getName();
-    }
-
-    public String getCurrentDescription() {
-        return current.getDescription();
-    }*/
-
-    public String getCurrentRoom() {
-        return current.getRoomName();
-    }
-
-    public void setCurrent(Room room) {
-        current = room;
-    }
-
     public Room getCurrent() {
         return current;
     }
